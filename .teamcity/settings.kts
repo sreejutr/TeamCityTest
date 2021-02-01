@@ -28,7 +28,14 @@ version = "2020.2"
 project {
 
     vcsRoot(Demo)
+
+    buildType(Build)
 }
+
+object Build : BuildType({
+    name = "Build"
+    description = "Build the project"
+})
 
 object Demo : GitVcsRoot({
     name = "Demo"
