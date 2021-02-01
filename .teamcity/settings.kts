@@ -1,4 +1,5 @@
 import jetbrains.buildServer.configs.kotlin.v2019_2.*
+import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.gradle
 import jetbrains.buildServer.configs.kotlin.v2019_2.vcs.GitVcsRoot
 
 /*
@@ -38,6 +39,13 @@ object Build : BuildType({
 
     vcs {
         root(Demo)
+    }
+
+    steps {
+        gradle {
+            tasks = "clean build"
+            gradleWrapperPath = ""
+        }
     }
 })
 
