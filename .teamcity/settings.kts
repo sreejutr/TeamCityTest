@@ -44,7 +44,6 @@ object Build : BuildType({
     steps {
         gradle {
             tasks = "clean build"
-            gradleWrapperPath = ""
         }
     }
 })
