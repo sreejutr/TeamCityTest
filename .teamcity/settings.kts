@@ -1,4 +1,5 @@
 import jetbrains.buildServer.configs.kotlin.v2019_2.*
+import jetbrains.buildServer.configs.kotlin.v2019_2.vcs.GitVcsRoot
 
 /*
 The settings script is an entry point for defining a TeamCity
@@ -25,4 +26,17 @@ To debug in IntelliJ Idea, open the 'Maven Projects' tool window (View
 version = "2020.2"
 
 project {
+
+    vcsRoot(Demo)
 }
+
+object Demo : GitVcsRoot({
+    name = "Demo"
+    url = "https://github.com/sreejutr/Demo.git"
+    pushUrl = "https://github.com/sreejutr/Demo.git"
+    branch = "master"
+    authMethod = password {
+        userName = "sreejutr@gmail.com"
+        password = "credentialsJSON:92d84340-4569-49d4-806b-9eb2e27e5fda"
+    }
+})
