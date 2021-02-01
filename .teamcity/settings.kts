@@ -35,6 +35,10 @@ project {
 object Build : BuildType({
     name = "Build"
     description = "Build the project"
+
+    vcs {
+        root(Demo)
+    }
 })
 
 object Demo : GitVcsRoot({
