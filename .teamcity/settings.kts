@@ -38,6 +38,8 @@ object Build : BuildType({
     name = "Build"
     description = "Build the project"
 
+    artifactRules = "build/libs => build/libs"
+
     vcs {
         root(Demo)
     }
